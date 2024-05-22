@@ -3,11 +3,7 @@ import 'package:ectd/day9//home.dart';
 import 'package:ectd/day9/pages/show_emp.dart';
 import 'package:flutter/material.dart';
 
-import 'day10/EASY_POS_R5/sql_helper.dart';
-
 void main() {
-  WidgetsFlutterBinding.ensureInitialized();
-  var sqlHelper = SqlHelper();
   runApp(const MyApp());
 }
 
