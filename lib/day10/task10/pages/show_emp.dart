@@ -93,6 +93,15 @@ class _ShowEmpPageState extends State<ShowEmpPage> {
         appBar: AppBar(
           title: const Text('Show Employees'),
         ),
+        // body: bodies[currentIndex];
+        // body: widget.empList.isEmpty
+        //     ? Center(child: SelectableText('No data'))
+        //     : Padding(
+        //         padding: const EdgeInsets.all(8.0),
+        //         child: ListView(
+        //           children: getEmpCard(),
+        //         ),
+        //       ),
         body: FutureBuilder<List<Employee>?>(
           future: DataBaseHelper.getAllEmployees(),
           builder: (context, AsyncSnapshot<List<Employee>?> snapshot) {
