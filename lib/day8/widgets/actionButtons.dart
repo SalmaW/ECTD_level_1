@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import '../day7/task/my_textButton.dart';
+import '../widgets/my_textButton.dart';
 import '../pages/c_pizza_page.dart';
 import '../pages/fries_page.dart';
 import '../pages/v_pizza_page.dart';

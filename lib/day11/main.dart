@@ -1,7 +1,8 @@
-import 'package:ectd/day9/pages/show_emp.dart';
+import 'package:ectd/day11/pages/home.dart';
 import 'package:flutter/material.dart';
 
 void main() {
+  WidgetsFlutterBinding.ensureInitialized();
   runApp(const MyApp());
 }
 
@@ -21,7 +22,7 @@ class MyApp extends StatelessWidget {
       //   '/cpizza': (context) => CPizzaPage(),
       //   '/fries': (context) => FriesPage(),
       // },
-      home: ShowEmpPage(empList: []),
+      home: HomePage(),
     );
   }
 }

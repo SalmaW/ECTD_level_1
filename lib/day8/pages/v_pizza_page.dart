@@ -1,19 +1,19 @@
+import 'package:ectd/day8/widgets/actionButtons.dart';
 import 'package:flutter/material.dart';
-import '../widgets/actionButtons.dart';
-import 'home.dart';
-import 'v_pizza_page.dart';
-import '../day7/task/my_textButton.dart';
+
+import '../widgets/my_textButton.dart';
 import 'c_pizza_page.dart';
 import 'fries_page.dart';
+import 'home.dart';
 
-class CPizzaPage extends StatelessWidget {
-  const CPizzaPage({super.key});
+class VPizzaPage extends StatelessWidget {
+  const VPizzaPage({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("Cheese Pizza"),
+        title: const Text("Vegetable Pizza"),
       ),
       body: Column(
         children: [
@@ -24,13 +24,13 @@ class CPizzaPage extends StatelessWidget {
               child: Column(
                 children: [
                   Image.asset(
-                    'assets/images/c_pizza.png',
+                    'assets/images/v_pizza.png',
                     fit: BoxFit.cover,
                   ),
                   const Padding(
                     padding: EdgeInsets.only(top: 100),
                     child: Text(
-                      "Cheese Page",
+                      "Vegetable Page",
                       style: TextStyle(
                           fontWeight: FontWeight.w800,
                           fontSize: 40,

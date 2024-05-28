@@ -1,9 +1,11 @@
 import 'package:ectd/day10/pages/home.dart';
-import 'package:ectd/day9//home.dart';
-import 'package:ectd/day9/pages/show_emp.dart';
 import 'package:flutter/material.dart';
+import '../day10/EASY_POS_R5/sql_helper.dart';
 
-void main() {
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  var sql = SqlHelper();
+  await sql.init(); // -> this solves a problem discussed in session 11
   runApp(const MyApp());
 }
 

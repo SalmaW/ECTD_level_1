@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import '../EASY_POS_R5/sql_helper.dart';
+
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
 
@@ -64,7 +66,21 @@ class _HomePageState extends State<HomePage> {
                           ),
                         ),
                         ElevatedButton(
-                            onPressed: () {
+                            onPressed: () async {
+                              var sql = SqlHelper();
+                              await sql.init();
+                              // var result = await sql.db?.insert("Customers", {
+                              //   "name": "salma",
+                              //   "phone": "123456789",
+                              //   "address": "new cairo",
+                              // });
+                              var data = await sql.db?.query("Customers");
+
+                              // print("result: $result"); //returns int id
+                              print("data: $data"); //returns table data
+
+                              // await sql.createTables();
+
                               if (formKey.currentState!.validate()) {
                                 //code to run
                               }

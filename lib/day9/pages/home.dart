@@ -1,5 +1,5 @@
-import 'package:ectd/day9/pages/show_emp.dart';
-import 'package:ectd/widgets/icon_button.dart';
+import '../pages/show_emp.dart';
+import '../widgets/icon_button.dart';
 import 'package:flutter/material.dart';
 
 class Home extends StatelessWidget {

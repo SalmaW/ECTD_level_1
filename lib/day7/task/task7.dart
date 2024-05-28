@@ -1,4 +1,5 @@
-import 'package:ectd/day7/task/my_textButton.dart';
+import 'package:ectd/day7/widgets/icon_button.dart';
+import 'package:ectd/day7/widgets/my_textButton.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -20,8 +21,11 @@ class MyApp extends StatelessWidget {
           backgroundColor: Colors.orange,
           title: Text('WOW Pizza'),
           actions: [
-            IconButton(onPressed: () {}, icon: Icon(Icons.facebook_outlined)),
-            IconButton(onPressed: () {}, icon: Icon(Icons.add)),
+            // IconButton(onPressed: () {}, icon: Icon(Icons.facebook_outlined)),
+            // IconButton(onPressed: () {}, icon: Icon(Icons.add)),
+
+            MyIconButton(),
+            MyImageButton(),
           ],
         ),
         body: Column(

@@ -1,11 +1,4 @@
-import 'package:ectd/day7/task/my_textButton.dart';
-import 'package:ectd/pages/c_pizza_page.dart';
-import 'package:ectd/pages/fries_page.dart';
-import 'package:ectd/pages/v_pizza_page.dart';
-import 'package:ectd/widgets/icon_button.dart';
-import 'package:ectd/widgets/menu_item.dart';
-import 'package:ectd/widgets/my_dropDown.dart';
-import 'package:ectd/widgets/pop_widget.dart';
+import 'package:ectd/day8/widgets/icon_button.dart';
 import 'package:flutter/material.dart';
 
 import '../widgets/actionButtons.dart';

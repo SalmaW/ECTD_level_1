@@ -1,9 +1,7 @@
-import 'package:ectd/day10/task10/models/database_helper.dart';
-import 'package:ectd/day10/task10/models/emp.dart';
-import 'package:ectd/day10/task10/pages/add_emp.dart';
-import 'package:ectd/day10/task10/pages/person_bottomNavigationBar_page.dart';
-import 'package:ectd/day10/task10/pages/phone_bottomNavigationBar_page.dart';
-import 'package:ectd/day10/task10/widgets/emp_card.dart';
+import 'package:ectd/day10/task/models/database_helper.dart';
+import 'package:ectd/day10/task/models/emp.dart';
+import 'package:ectd/day10/task/pages/add_emp.dart';
+import 'package:ectd/day10/task/widgets/emp_card.dart';
 import 'package:flutter/material.dart';
 
 class ShowEmpPage extends StatefulWidget {
