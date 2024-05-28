@@ -13,14 +13,17 @@ You can see notes in each of these mini-projects.
 Here you can see the tasks and short description:
 | Task  | Description |
 | ------------- | ------------- |
-| [Task 5](lib/day10/task10)  | Content Cell  |
-| [Task 6](lib/day6)  | Content Cell  |
-| [Task 7](lib/day7/task)  | Content Cell  |
-| [Task 8](lib/day8)  | Content Cell  |
-| [Task 9](lib/day9/task)  | Content Cell  |
-| [Task 10](lib/day10/task10)  | Content Cell  |
-| [Task 11]()  | Content Cell  |
-| Content Cell  | Content Cell  |
+| [Task 5](lib/day005)  | Content Cell  |
+| [Task 6](lib/day006)  | Content Cell  |
+| [Task 7](lib/day007/task)  | Content Cell  |
+| [Task 8](lib/day008)  | Content Cell  |
+| [Task 9](lib/day009/task)  | Content Cell  |
+| [Task 10](lib/day010/task)  | Content Cell  |
+| [Task 11](lib/day011/task)  | Content Cell  |
+| [Task 12](lib)  | Content Cell  |
+| [Task 13](lib)  | Content Cell  |
+| [Task 14](lib)  | Content Cell  |
+| [Task 15](lib)  | Content Cell  |
 
 
 A few resources to get you started if this is your first Flutter project:

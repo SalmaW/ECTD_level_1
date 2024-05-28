@@ -1,4 +1,4 @@
-import 'package:ectd/day011/pages/home.dart';
+import '../day009/pages/show_emp.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -21,7 +21,7 @@ class MyApp extends StatelessWidget {
       //   '/cpizza': (context) => CPizzaPage(),
       //   '/fries': (context) => FriesPage(),
       // },
-      home: HomePage(),
+      home: ShowEmpPage(empList: []),
     );
   }
 }
