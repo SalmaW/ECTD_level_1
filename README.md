@@ -10,10 +10,16 @@ This project is a collection of mini-projects throughout the *first 14 sessions*
 
 You can see notes in each of these mini-projects.
 
-Where you can see the tasks:
+Here you can see the tasks and short description:
 | Task  | Description |
 | ------------- | ------------- |
-| [Task 10](https://github.com/SalmaW/ECTD/tree/master/lib/day10/task10)  | Content Cell  |
+| [Task 5](lib/day10/task10)  | Content Cell  |
+| [Task 6](lib/day6)  | Content Cell  |
+| [Task 7](lib/day7/task)  | Content Cell  |
+| [Task 8](lib/day8)  | Content Cell  |
+| [Task 9](lib/day9/task)  | Content Cell  |
+| [Task 10](lib/day10/task10)  | Content Cell  |
+| [Task 11]()  | Content Cell  |
 | Content Cell  | Content Cell  |
 
 
