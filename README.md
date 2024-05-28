@@ -10,6 +10,13 @@ This project is a collection of mini-projects throughout the *first 14 sessions*
 
 You can see notes in each of these mini-projects.
 
+Where you can see the tasks:
+| Task  | Description |
+| ------------- | ------------- |
+| [Task 10](https://github.com/SalmaW/ECTD/tree/master/lib/day10/task10)  | Content Cell  |
+| Content Cell  | Content Cell  |
+
+
 A few resources to get you started if this is your first Flutter project:
 
 - [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
