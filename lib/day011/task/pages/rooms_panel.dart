@@ -1,13 +1,85 @@
 import 'package:flutter/material.dart';
+import '../models/item.dart';
 
-class RoomsPanel extends StatelessWidget {
-  const RoomsPanel({Key? key}) : super(key: key);
+class RoomsPanel extends StatefulWidget {
+  const RoomsPanel({super.key});
 
+  @override
+  State<RoomsPanel> createState() => _RoomsPanelState();
+}
+
+class _RoomsPanelState extends State<RoomsPanel> {
+  final List<Item> _data = <Item>[
+    Item(
+        image: Image.asset("assets/images/single_room.jpg"),
+        headerText: 'Single Room',
+        expandedText: "This is a single room"),
+    Item(
+        image: Image.asset("assets/images/double_room.jpeg"),
+        headerText: 'Double Room',
+        expandedText: "This is a double room"),
+    Item(
+        image: Image.asset("assets/images/king_room.jpg"),
+        headerText: 'King Room',
+        expandedText: "This is a king room"),
+    Item(
+        image: Image.asset("assets/images/connecting_room.jpg"),
+        headerText: 'Connecting Room',
+        expandedText: "This is a connecting room"),
+    Item(
+        image: Image.asset("assets/images/sweet_room.jpg"),
+        headerText: 'Sweet Room',
+        expandedText: "This is a sweet room"),
+  ];
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("Room Panel"),
+        title: const Text("Room Panel"),
+      ),
+      body: SingleChildScrollView(
+        child: ExpansionPanelList(
+          expansionCallback: (int index, bool isExpanded) {
+            _data[index].isExpanded = !_data[index].isExpanded;
+            setState(() {});
+          },
+          children: _data.map<ExpansionPanel>((Item item) {
+            return ExpansionPanel(
+              canTapOnHeader: true,
+              headerBuilder: (BuildContext context, bool isExpanded) {
+                return Stack(
+                  children: [
+                    ListTile(
+                      title: item.image,
+                    ),
+                    Positioned(
+                      right: 30,
+                      top: 10,
+                      child: Text(
+                        item.headerText,
+                        style: const TextStyle(
+                            fontSize: 20, color: Colors.black38),
+                      ),
+                    ),
+                  ],
+                );
+              },
+              body: ListTile(
+                title: Text(item.headerText),
+                subtitle: Text(item.expandedText),
+                trailing: const Icon(
+                  Icons.delete,
+                  color: Colors.red,
+                ),
+                onTap: () {
+                  _data.removeWhere((Item currentItem) => item == currentItem);
+                  setState(() {});
+                },
+              ),
+              isExpanded: item.isExpanded,
+            );
+          }).toList(),
+        ),
       ),
     );
   }

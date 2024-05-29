@@ -1,11 +1,7 @@
-import 'package:ectd/day011/task/pages/rooms_panel.dart';
-import 'package:ectd/day011/task/widgets/date_time_button.dart';
-
+import '../pages/rooms_panel.dart';
+import '../widgets/date_time_button.dart';
 import '../widgets/radio_check_button.dart';
 import '../widgets/slider_widget.dart';
-import '../widgets/switch_button.dart';
-import '../widgets/bottom_modal_sheet.dart';
-import '../widgets/custom_dialog.dart';
 import 'package:flutter/material.dart';
 
 class HomePage extends StatefulWidget {
@@ -23,12 +19,12 @@ class _HomePageState extends State<HomePage> {
       floatingActionButton: FloatingActionButton(
         onPressed: () {
           Navigator.push(
-              context, MaterialPageRoute(builder: (ctx) => RoomsPanel()));
+              context, MaterialPageRoute(builder: (ctx) => const RoomsPanel()));
         },
-        child: Icon(Icons.local_hotel),
+        child: const Icon(Icons.local_hotel),
       ),
       appBar: AppBar(
-        title: Text('Home Page'),
+        title: const Text('Home Page'),
       ),
       body: Padding(
         padding: const EdgeInsets.all(8.0),
@@ -48,7 +44,7 @@ class _HomePageState extends State<HomePage> {
                   ),
                   borderRadius: BorderRadius.circular(10),
                 ),
-                child: SizedBox(),
+                child: const SizedBox(),
               ),
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceAround,
@@ -59,21 +55,21 @@ class _HomePageState extends State<HomePage> {
                       checkInDate = date;
                       setState(() {});
                     },
-                    key: Key("check-in"),
+                    key: const Key("check-in"),
                     firstDate: DateTime.now(),
                   ),
                   DateTimeButton(
                     checkInOutDate: "Check-out Date:",
-                    key: Key("check-out"),
+                    key: const Key("check-out"),
                     firstDate: checkInDate != null
                         ? checkInDate!.add(Duration(days: 1))
                         : DateTime.now(),
                   ),
                 ],
               ),
-              SliderWidget(labelName: "Adults"),
-              SliderWidget(labelName: "Children"),
-              Text(
+              const SliderWidget(labelName: "Adults"),
+              const SliderWidget(labelName: "Children"),
+              const Text(
                 "Extra services:",
                 style: TextStyle(fontSize: 20),
               ),
@@ -90,7 +86,7 @@ class _HomePageState extends State<HomePage> {
                   ),
                 ],
               ),
-              Text(
+              const Text(
                 "Room View:",
                 style: TextStyle(fontSize: 20),
               ),
