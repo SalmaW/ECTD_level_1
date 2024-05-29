@@ -22,10 +22,8 @@ class _SliderWidgetState extends State<SliderWidget> {
           max: 6,
           value: value,
           onChanged: (valueOnChanged) {
-            if (valueOnChanged != 0) {
-              value = valueOnChanged;
-              setState(() {});
-            }
+            value = valueOnChanged;
+            setState(() {});
           },
         ),
       ],
