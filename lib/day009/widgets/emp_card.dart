@@ -1,4 +1,4 @@
-import 'package:ectd/day009/models/emp.dart';
+import '../models/emp.dart';
 import 'package:flutter/material.dart';
 
 class EmpCardWidget extends StatelessWidget {

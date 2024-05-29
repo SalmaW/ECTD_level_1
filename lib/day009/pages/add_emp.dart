@@ -1,5 +1,5 @@
-import 'package:ectd/day009/models/emp.dart';
-import 'package:ectd/day009/pages/show_emp.dart';
+import '../models/emp.dart';
+import '../pages/show_emp.dart';
 import 'package:flutter/material.dart';
 
 class AddEmpPage extends StatefulWidget {

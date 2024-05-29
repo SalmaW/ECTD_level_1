@@ -1,4 +1,4 @@
-import 'package:ectd/day008/pages/web_view.dart';
+import '../pages/web_view.dart';
 import 'package:flutter/material.dart';
 
 class MyIconButton extends StatelessWidget {

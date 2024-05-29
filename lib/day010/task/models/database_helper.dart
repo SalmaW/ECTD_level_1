@@ -1,4 +1,4 @@
-import 'package:ectd/day010/task/models/emp.dart';
+import '../models/emp.dart';
 import 'package:sqflite/sqflite.dart';
 import 'package:path/path.dart';
 

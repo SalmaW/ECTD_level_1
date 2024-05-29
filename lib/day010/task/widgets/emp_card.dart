@@ -1,5 +1,5 @@
-import 'package:ectd/day010/task/models/emp.dart';
-import 'package:ectd/day010/task/pages/show_emp.dart';
+import '../models/emp.dart';
+import '../pages/show_emp.dart';
 import 'package:flutter/material.dart';
 
 import '../models/database_helper.dart';
