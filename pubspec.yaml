@@ -84,6 +84,9 @@ flutter:
     - family: Gilroy
       fonts:
         - asset: assets/fonts/Gilroy/Gilroy-Regular.ttf
+    - family: Poetsen_One
+      fonts:
+        - asset: assets/fonts/Poetsen_One/PoetsenOne-Regular.ttf
   #       - asset: fonts/Schyler-Italic.ttf
   #         style: italic
   #   - family: Trajan Pro

@@ -1,4 +1,4 @@
-import 'package:ectd/day011/pages/home.dart';
+import '../day011/task/pages/home.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -13,8 +13,8 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
-        fontFamily: 'Gilroy',
-      ),
+          fontFamily: 'Poetsen_One',
+          focusColor: Theme.of(context).primaryColorLight),
       // routes: {//navigation by name
       //   '/': (context) => Home(),
       //   '/vpizza': (context) => VPizzaPage(),
