@@ -21,7 +21,7 @@ class MyApp extends StatelessWidget {
       //   '/cpizza': (context) => CPizzaPage(),
       //   '/fries': (context) => FriesPage(),
       // },
-      home: HomePage(),
+      home: const HomePage(),
     );
   }
 }
