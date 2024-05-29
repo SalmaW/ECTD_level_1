@@ -71,9 +71,38 @@ class _RoomsPanelState extends State<RoomsPanel> {
                   Icons.delete,
                   color: Colors.red,
                 ),
-                onTap: () {
-                  _data.removeWhere((Item currentItem) => item == currentItem);
-                  setState(() {});
+                onTap: () async {
+                  var result = await showDialog(
+                      context: context,
+                      builder: (ctx) {
+                        return AlertDialog(
+                          title: const Text("Are you sure?"),
+                          content: const Text("please confirm this"),
+                          actions: [
+                            TextButton(
+                              onPressed: () {
+                                Navigator.pop(context, false);
+                              },
+                              child: const Text("Cancel"),
+                            ),
+                            TextButton(
+                              onPressed: () {
+                                _data.removeWhere(
+                                    (Item currentItem) => item == currentItem);
+                                Navigator.pop(context, true);
+                                setState(() {});
+                              },
+                              child: const Text("OK"),
+                            ),
+                          ],
+                        );
+                      });
+                  if (result == true) {
+                    print('user wanted delete');
+                  } else {
+                    print('user did not want delete');
+                  }
+                  return result;
                 },
               ),
               isExpanded: item.isExpanded,
