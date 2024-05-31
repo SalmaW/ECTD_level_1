@@ -1,4 +1,4 @@
-import '../day011/task/pages/home.dart';
+import '../nilu_app/pages/home.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -12,9 +12,22 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
+      title: 'Easy Pos',
       theme: ThemeData(
-          fontFamily: 'Poetsen_One',
-          focusColor: Theme.of(context).primaryColorLight),
+        // colorScheme: ColorScheme.fromSeed(seedColor: seedColor), //used when have dominated palette
+        appBarTheme: const AppBarTheme(
+          backgroundColor: Color(0xff0157db),
+          foregroundColor: Colors.white,
+        ),
+        colorScheme: ColorScheme.fromSwatch(
+          errorColor: Colors.red,
+          cardColor: Colors.blue.shade100,
+          backgroundColor: Colors.white,
+          primarySwatch: getMaterialColor(
+              const Color(0xff0157db)), // convert color to materialColor
+        ),
+        useMaterial3: true,
+      ),
       // routes: {//navigation by name
       //   '/': (context) => Home(),
       //   '/vpizza': (context) => VPizzaPage(),
@@ -23,5 +36,26 @@ class MyApp extends StatelessWidget {
       // },
       home: const HomePage(),
     );
+  }
+
+  MaterialColor getMaterialColor(Color color) {
+    final int red = color.red;
+    final int green = color.green;
+    final int blue = color.blue;
+
+    final Map<int, Color> shades = {
+      50: Color.fromRGBO(red, green, blue, .1),
+      100: Color.fromRGBO(red, green, blue, .2),
+      200: Color.fromRGBO(red, green, blue, .3),
+      300: Color.fromRGBO(red, green, blue, .4),
+      400: Color.fromRGBO(red, green, blue, .5),
+      500: Color.fromRGBO(red, green, blue, .6),
+      600: Color.fromRGBO(red, green, blue, .7),
+      700: Color.fromRGBO(red, green, blue, .8),
+      800: Color.fromRGBO(red, green, blue, .9),
+      900: Color.fromRGBO(red, green, blue, 1),
+    };
+
+    return MaterialColor(color.value, shades);
   }
 }
