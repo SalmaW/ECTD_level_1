@@ -20,7 +20,7 @@ Here you can see the tasks and short description:
 | [Task 9](lib/day009/task)  | Content Cell  |
 | [Task 10](lib/day010/task)  | Content Cell  |
 | [Task 11](lib/day011/task)  | Content Cell  |
-| [Task 12](lib)  | Content Cell  |
+| [Task 12](lib/nilu_app)  | Content Cell  |
 | [Task 13](lib)  | Content Cell  |
 | [Task 14](lib)  | Content Cell  |
 | [Task 15](lib)  | Content Cell  |
