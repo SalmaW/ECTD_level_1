@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 class GridViewItem extends StatelessWidget {
-  final Color color;
+  final Color? color;
   final String label;
   final IconData iconData;
   const GridViewItem(
@@ -23,20 +23,18 @@ class GridViewItem extends StatelessWidget {
         children: [
           CircleAvatar(
             radius: 40,
-            backgroundColor: color.withOpacity(.3),
+            backgroundColor: color?.withOpacity(.2),
             child: Icon(
               iconData,
               color: color,
               size: 40,
             ),
           ),
-          const SizedBox(
-            height: 10,
-          ),
+          const SizedBox(height: 10),
           Text(
             label,
             style: const TextStyle(
-              fontSize: 18,
+              fontSize: 16,
               fontWeight: FontWeight.w800,
             ),
           )

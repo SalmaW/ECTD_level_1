@@ -1,7 +1,18 @@
+import '../nilu_app/helpers/sql_helper.dart';
+import 'package:get_it/get_it.dart';
+
 import '../nilu_app/pages/home.dart';
 import 'package:flutter/material.dart';
 
-void main() {
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+
+  var sqlHelper = SqlHelper();
+  await sqlHelper.init();
+  if (sqlHelper.db != null) {
+    GetIt.I.registerSingleton(sqlHelper);
+  }
+
   runApp(const MyApp());
 }
 

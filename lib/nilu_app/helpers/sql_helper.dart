@@ -28,7 +28,7 @@ class SqlHelper {
     try {
       var batch = db!.batch();
       batch.execute("""
-        Create table if not exists categories(
+        Create table if not exists Categories(
           id integer primary key,
           name text not null,
           description text not null
@@ -36,20 +36,20 @@ class SqlHelper {
           """);
 
       batch.execute("""
-        Create table if not exists products(
+        Create table if not exists Products(
           id integer primary key,
           name text not null,
           description text not null,
           price double not null,
           stock integer not null,
-          isAvaliable boolean not null,
+          isAvailable boolean not null,
           image blob,
           categoryId integer not null
           ) 
           """);
 
       batch.execute("""
-        Create table if not exists clients(
+        Create table if not exists Clients(
           id integer primary key,
           name text not null,
           email text,
@@ -59,11 +59,49 @@ class SqlHelper {
           """);
 
       var result = await batch.commit();
-      print('resuts $result');
+      print('results $result');
       return true;
     } catch (e) {
       print('Error in creating table: $e');
       return false;
     }
   }
+
+  // Future<bool> createTables() async {
+  //   try {
+  //     await batch.execute("""
+  //       Create table if not exists Categories(
+  //         id integer primary key,
+  //         name text not null,
+  //         description text not null
+  //         )
+  //         """);
+  //
+  //     await batch.execute("""
+  //       Create table if not exists Products(
+  //         id integer primary key,
+  //         name text not null,
+  //         description text not null,
+  //         price double not null,
+  //         stock integer not null,
+  //         isAvailable boolean not null,
+  //         image blob,
+  //         categoryId integer not null
+  //         )
+  //         """);
+  //
+  //     await batch.execute("""
+  //       Create table if not exists Clients(
+  //         id integer primary key,
+  //         name text not null,
+  //         email text,
+  //         phone text,
+  //         address text
+  //         )
+  //         """);
+  //
+  //   } catch (e) {
+  //     print('Error in creating table: $e');
+  //   }
+  // }
 }
