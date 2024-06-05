@@ -40,6 +40,7 @@ dependencies:
   sqflite_common_ffi_web: '>=0.1.0-dev.1'
   flut_grouped_buttons: ^0.0.9
   get_it: ^7.7.0
+  data_table_2: ^2.5.12
 
 dev_dependencies:
   flutter_test:

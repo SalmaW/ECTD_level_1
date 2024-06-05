@@ -1,3 +1,6 @@
+import 'package:ectd/nilu_app/pages/client/clients.dart';
+
+import '../pages/category/categories.dart';
 import '../helpers/sql_helper.dart';
 import '../widgets/grid_view_item.dart';
 import 'package:flutter/foundation.dart';
@@ -40,11 +43,11 @@ class _HomePageState extends State<HomePage> {
               Expanded(
                 child: Container(
                   height: MediaQuery.of(context).size.height / 3 +
-                      (kIsWeb ? 0 : 57), // 57 works on my emulator
+                      (kIsWeb ? 0 : 24), // 24 works on my emulator
                   color: Theme.of(context).primaryColor,
                   child: Padding(
                     padding: const EdgeInsets.symmetric(
-                        horizontal: 16, vertical: 30),
+                        horizontal: 16, vertical: 20),
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
@@ -77,9 +80,7 @@ class _HomePageState extends State<HomePage> {
                             )
                           ],
                         ),
-                        const SizedBox(
-                          height: 20,
-                        ),
+                        const SizedBox(height: 20),
                         headerItem('Exchange rate', '1USD = 50 EGP'),
                         headerItem('Today\'s sales', '1000 EGP'),
                       ],
@@ -102,21 +103,41 @@ class _HomePageState extends State<HomePage> {
                     color: Colors.orange,
                     iconData: Icons.receipt,
                     label: 'All Sales',
+                    onTap: () {},
                   ),
                   GridViewItem(
                     color: Colors.pink[200],
                     iconData: Icons.inventory_2,
                     label: 'Products',
+                    onTap: () {},
                   ),
                   GridViewItem(
                     color: Colors.lightBlue,
                     iconData: Icons.people,
                     label: 'Clients',
+                    onTap: () {
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (ctx) => const ClientsScreen()));
+                    },
                   ),
                   GridViewItem(
                     color: Colors.green,
                     iconData: Icons.shopping_basket,
                     label: 'New Sale',
+                    onTap: () {},
+                  ),
+                  GridViewItem(
+                    color: Colors.yellow,
+                    iconData: Icons.category,
+                    label: 'Categories',
+                    onTap: () {
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (ctx) => const CategoriesScreen()));
+                    },
                   ),
                 ],
               ),
@@ -137,7 +158,7 @@ class _HomePageState extends State<HomePage> {
           borderRadius: BorderRadius.circular(5),
         ),
         child: Padding(
-          padding: const EdgeInsets.all(30.0),
+          padding: const EdgeInsets.all(20.0),
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
