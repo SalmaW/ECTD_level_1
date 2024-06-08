@@ -31,11 +31,10 @@ class EmpCardWidget extends StatefulWidget {
   final VoidCallback onTap;
   final VoidCallback onLongPress;
   const EmpCardWidget(
-      {Key? key,
+      {super.key,
       required this.employee,
       required this.onTap,
-      required this.onLongPress})
-      : super(key: key);
+      required this.onLongPress});
 
   @override
   State<EmpCardWidget> createState() => _EmpCardWidgetState();
@@ -63,7 +62,7 @@ class _EmpCardWidgetState extends State<EmpCardWidget> {
             ),
             trailing: IconButton(
                 color: Colors.red,
-                icon: Icon(Icons.delete),
+                icon: const Icon(Icons.delete),
                 onPressed: () async {
                   showDialog(
                       context: context,

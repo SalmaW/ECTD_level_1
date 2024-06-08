@@ -6,7 +6,7 @@ import 'package:flutter/material.dart';
 class AddEmpPage extends StatefulWidget {
   final Employee? employee;
   // List<Employee> empList;
-  AddEmpPage(
+  const AddEmpPage(
       {this.employee,
       super.key}); //the key tells about the widget state at some point - height, width, .size, .. etc
 
@@ -272,8 +272,9 @@ class _AddEmpPageState extends State<AddEmpPage> {
       ),
 
       suffixIcon: IconButton(
-        icon:
-            obscure ? Icon(Icons.visibility_off_sharp) : Icon(Icons.visibility),
+        icon: obscure
+            ? const Icon(Icons.visibility_off_sharp)
+            : const Icon(Icons.visibility),
         onPressed: () {
           obscure = !obscure;
           setState(() {});

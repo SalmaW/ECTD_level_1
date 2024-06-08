@@ -1,11 +1,13 @@
 import '../../helpers/sql_helper.dart';
+import '../../models/category_data.dart';
 import '../../widgets/text_form_field.dart';
 import 'package:flutter/material.dart';
 import 'package:get_it/get_it.dart';
 import '../../widgets/app_button.dart';
 
 class CategoriesOps extends StatefulWidget {
-  const CategoriesOps({super.key});
+  final CategoryData? categories;
+  const CategoriesOps({super.key, this.categories});
 
   @override
   State<CategoriesOps> createState() => _CategoriesOpsState();
@@ -13,13 +15,22 @@ class CategoriesOps extends StatefulWidget {
 
 class _CategoriesOpsState extends State<CategoriesOps> {
   var formKey = GlobalKey<FormState>();
-  var nameController = TextEditingController();
-  var descriptionController = TextEditingController();
+  TextEditingController? nameController;
+  TextEditingController? descriptionController;
+
+  @override
+  void initState() {
+    nameController = TextEditingController(text: widget.categories?.name);
+    descriptionController =
+        TextEditingController(text: widget.categories?.description);
+    super.initState();
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text("Add new"),
+        title: Text(widget.categories != null ? "Update Date" : "Add new"),
       ),
       body: Padding(
         padding: const EdgeInsets.all(20.0),
@@ -28,7 +39,7 @@ class _CategoriesOpsState extends State<CategoriesOps> {
           child: Column(
             children: [
               AppTextFormField(
-                controller: nameController,
+                controller: nameController!,
                 labelText: "Name",
                 validator: (value) {
                   if (value!.isEmpty) {
@@ -39,7 +50,7 @@ class _CategoriesOpsState extends State<CategoriesOps> {
               ),
               const SizedBox(height: 20),
               AppTextFormField(
-                controller: descriptionController,
+                controller: descriptionController!,
                 labelText: "Description",
                 validator: (value) {
                   if (value!.isEmpty) {
@@ -53,7 +64,7 @@ class _CategoriesOpsState extends State<CategoriesOps> {
                 onPressed: () async {
                   await onSubmit();
                 },
-                label: 'Submit',
+                label: widget.categories != null ? "Update" : "Submit",
               ),
             ],
           ),
@@ -65,11 +76,25 @@ class _CategoriesOpsState extends State<CategoriesOps> {
   Future<void> onSubmit() async {
     try {
       if (formKey.currentState!.validate()) {
-        var sqlHelper = GetIt.I.get<SqlHelper>();
-        await sqlHelper.db!.insert("Categories", {
-          "name": nameController.text,
-          "description": descriptionController.text
-        });
+        if (widget.categories != null) {
+          //update
+          var sqlHelper = GetIt.I.get<SqlHelper>();
+          await sqlHelper.db!.update(
+            "Categories",
+            {
+              "name": nameController?.text,
+              "description": descriptionController?.text,
+            },
+            where: 'id = ?',
+            whereArgs: [widget.categories?.id],
+          );
+        } else {
+          var sqlHelper = GetIt.I.get<SqlHelper>();
+          await sqlHelper.db!.insert("Categories", {
+            "name": nameController?.text,
+            "description": descriptionController?.text,
+          });
+        }
         ScaffoldMessenger.of(context).showSnackBar(
           const SnackBar(
               backgroundColor: Colors.green,

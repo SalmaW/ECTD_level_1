@@ -1,4 +1,5 @@
 import 'package:data_table_2/data_table_2.dart';
+import '../../widgets/app_table.dart';
 import 'package:flutter/material.dart';
 import 'package:get_it/get_it.dart';
 import '../../helpers/sql_helper.dart';
@@ -14,10 +15,12 @@ class CategoriesScreen extends StatefulWidget {
 
 class _CategoriesScreenState extends State<CategoriesScreen> {
   List<CategoryData>? categories;
+  final SqlHelper _dbHelper = SqlHelper();
   @override
   void initState() {
     getCategories();
     super.initState();
+    _dbHelper.init();
   }
 
   void getCategories() async {
@@ -36,7 +39,7 @@ class _CategoriesScreenState extends State<CategoriesScreen> {
       }
     } catch (e) {
       categories = [];
-      print("Error in get data $e");
+      print("Error in get data in categories: $e");
     }
     setState(() {});
   }
@@ -66,11 +69,10 @@ class _CategoriesScreenState extends State<CategoriesScreen> {
             TextField(
               onChanged: (value) async {
                 var sqlHelper = GetIt.I.get<SqlHelper>();
-                var search = await sqlHelper.db!.rawQuery("""
+                await sqlHelper.db!.rawQuery("""
                 SELECT * FROM Categories
                 WHERE name LIKE '%$value%' OR description LIKE '%$value%'
                 """);
-                print(search);
               },
               decoration: const InputDecoration(
                 prefixIcon: Icon(Icons.search),
@@ -85,30 +87,30 @@ class _CategoriesScreenState extends State<CategoriesScreen> {
             ),
             const SizedBox(height: 10),
             Expanded(
-              child: PaginatedDataTable2(
-                // showCheckboxColumn: true,
-                empty: const Center(child: Text("No Data Found")),
-                renderEmptyRowsInTheEnd: false,
-                isHorizontalScrollBarVisible: true,
-                minWidth: 600,
-                columnSpacing: 20,
-                horizontalMargin: 20,
-                wrapInCard: false,
-                rowsPerPage: 15,
-                border: TableBorder.all(),
-                headingTextStyle: const TextStyle(
-                  color: Colors.white,
-                  fontSize: 18,
-                ),
-                headingRowColor:
-                    WidgetStatePropertyAll(Theme.of(context).primaryColor),
+              child: AppTable(
                 columns: const [
                   DataColumn(label: Text("Id")),
                   DataColumn(label: Text("Name")),
                   DataColumn(label: Text("Description")),
                   DataColumn(label: Center(child: Text("Actions"))),
                 ],
-                source: MyDataTableSource(categories, getCategories),
+                source: CategoriesTableSource(
+                  categories: categories,
+                  onUpdate: (categoryData) async {
+                    var result = await Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (ctx) =>
+                              CategoriesOps(categories: categoryData)),
+                    );
+                    if (result ?? false) {
+                      getCategories();
+                    }
+                  },
+                  onDelete: (categoryData) {
+                    _attemptDeleteCategory(categoryData.id!);
+                  },
+                ),
               ),
             ),
           ],
@@ -116,13 +118,101 @@ class _CategoriesScreenState extends State<CategoriesScreen> {
       ),
     );
   }
+
+  void _attemptDeleteCategory(int categoryId) async {
+    int dependentCount = await _dbHelper.getDependentProductCount(categoryId);
+
+    if (dependentCount > 0) {
+      _showWarningDialog(dependentCount);
+    } else {
+      onDeleteRow(categoryId);
+    }
+  }
+
+  void _showWarningDialog(int count) {
+    showDialog(
+      context: context,
+      builder: (BuildContext context) {
+        return AlertDialog(
+          surfaceTintColor: Colors.red,
+          title: const Text(
+            'Warning',
+            style: TextStyle(
+              color: Colors.red,
+              fontWeight: FontWeight.w600,
+            ),
+          ),
+          content: Text(
+            'There are $count rows in Products that reference this category. Cannot delete this Category.',
+            style: const TextStyle(fontSize: 18),
+          ),
+          actions: <Widget>[
+            TextButton(
+              child: const Text(
+                'OK',
+                style: TextStyle(fontSize: 18),
+              ),
+              onPressed: () {
+                Navigator.pop(context, false);
+              },
+            ),
+          ],
+        );
+      },
+    );
+  }
+
+  Future<void> onDeleteRow(int id) async {
+    try {
+      var dialogResult = await showDialog(
+        context: context,
+        builder: (context) {
+          return AlertDialog(
+            title: const Text("Delete Category"),
+            content:
+                const Text("Are you sure you want to delete this category?"),
+            actions: [
+              TextButton(
+                  onPressed: () {
+                    Navigator.pop(context, false);
+                  },
+                  child: const Text('Cancel')),
+              TextButton(
+                  onPressed: () {
+                    Navigator.pop(context, true);
+                  },
+                  child: const Text('OK')),
+            ],
+          );
+        },
+      );
+      if (dialogResult ?? false) {
+        var sqlHelper = GetIt.I.get<SqlHelper>();
+        var result = await sqlHelper.db!.delete(
+          "Categories",
+          where: "id = ?",
+          whereArgs: [id],
+        );
+        if (result > 0) {
+          getCategories();
+        }
+      }
+    } catch (e) {
+      print('Error in delete category: $e');
+    }
+  }
 }
 
-class MyDataTableSource extends DataTableSource {
+class CategoriesTableSource extends DataTableSource {
   List<CategoryData>? categories;
-  VoidCallback getCategories;
+  void Function(CategoryData) onUpdate;
+  void Function(CategoryData) onDelete;
 
-  MyDataTableSource(this.categories, this.getCategories);
+  CategoriesTableSource({
+    required this.categories,
+    required this.onUpdate,
+    required this.onDelete,
+  });
 
   @override
   DataRow? getRow(int index) {
@@ -140,12 +230,14 @@ class MyDataTableSource extends DataTableSource {
               onPressed: () async {
                 // Navigator.push(context,
                 //     MaterialPageRoute(builder: (ctx) => CategoriesOps()));
+                onUpdate.call(categories![index]);
               },
               icon: const Icon(Icons.edit),
             ),
             IconButton(
               onPressed: () async {
-                await onDelete(categories?[index].id ?? 0);
+                // await onDeleteRow(categories?[index].id ?? 0);
+                onDelete.call(categories![index]);
               },
               icon: const Icon(Icons.delete),
               color: Colors.red,
@@ -154,20 +246,6 @@ class MyDataTableSource extends DataTableSource {
         )),
       ],
     );
-  }
-
-  Future<void> onDelete(int id) async {
-    try {
-      var sqlHelper = GetIt.I.get<SqlHelper>();
-      var result = await sqlHelper.db!.delete(
-        "Categories",
-        where: "id = ?",
-        whereArgs: [id],
-      );
-      if (result > 0) {
-        getCategories();
-      }
-    } catch (e) {}
   }
 
   @override

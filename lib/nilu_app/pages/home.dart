@@ -1,5 +1,5 @@
 import 'package:ectd/nilu_app/pages/client/clients.dart';
-
+import 'package:ectd/nilu_app/pages/product/products.dart';
 import '../pages/category/categories.dart';
 import '../helpers/sql_helper.dart';
 import '../widgets/grid_view_item.dart';
@@ -43,11 +43,11 @@ class _HomePageState extends State<HomePage> {
               Expanded(
                 child: Container(
                   height: MediaQuery.of(context).size.height / 3 +
-                      (kIsWeb ? 0 : 24), // 24 works on my emulator
+                      (kIsWeb ? 0 : 15), // 24 works on my emulator
                   color: Theme.of(context).primaryColor,
                   child: Padding(
                     padding: const EdgeInsets.symmetric(
-                        horizontal: 16, vertical: 20),
+                        horizontal: 16, vertical: 10),
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
@@ -80,7 +80,7 @@ class _HomePageState extends State<HomePage> {
                             )
                           ],
                         ),
-                        const SizedBox(height: 20),
+                        const SizedBox(height: 10),
                         headerItem('Exchange rate', '1USD = 50 EGP'),
                         headerItem('Today\'s sales', '1000 EGP'),
                       ],
@@ -109,7 +109,12 @@ class _HomePageState extends State<HomePage> {
                     color: Colors.pink[200],
                     iconData: Icons.inventory_2,
                     label: 'Products',
-                    onTap: () {},
+                    onTap: () {
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (ctx) => const ProductsScreen()));
+                    },
                   ),
                   GridViewItem(
                     color: Colors.lightBlue,
