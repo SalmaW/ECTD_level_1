@@ -129,12 +129,6 @@ class _ProductsOpsState extends State<ProductsOps> {
                   controller: imageController!,
                   textInputAction: TextInputAction.next,
                   labelText: "Image",
-                  validator: (value) {
-                    if (value!.isEmpty) {
-                      return "Image is Required";
-                    }
-                    return null;
-                  },
                 ),
                 const SizedBox(height: 20),
                 Row(

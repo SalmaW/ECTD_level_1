@@ -22,6 +22,7 @@ class SqlHelper {
           },
         );
       }
+      await db!.execute("PRAGMA foreign_keys = ON;");
     } catch (e) {
       print('Error in creating database: $e');
     }
@@ -29,18 +30,14 @@ class SqlHelper {
 
   Future<bool> createTables() async {
     try {
-      await db!.execute("""
-      PRAGMA foreign_keys = ON;
-      """);
-
       var batch = db!.batch();
       // batch.rawQuery("""
       // PRAGMA foreign_keys = ON;
       // """);
 
-      batch.rawQuery("""
-      PRAGMA foreign_keys 
-      """);
+      // batch.rawQuery("""
+      // PRAGMA foreign_keys
+      // """);
 
       batch.execute("""
         Create table if not exists Categories(
