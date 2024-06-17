@@ -197,8 +197,8 @@ class ProductsTableSource extends DataTableSource {
         DataCell(Text("${products?[index].isAvailable}")),
         DataCell(Image.network(
           "${products?[index].image}",
-          height: 100,
-          width: 100,
+          // height: 100,
+          // width: 100,
           fit: BoxFit.cover,
         )),
         DataCell(Row(

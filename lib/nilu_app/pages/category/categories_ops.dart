@@ -88,12 +88,14 @@ class _CategoriesOpsState extends State<CategoriesOps> {
             where: 'id = ?',
             whereArgs: [widget.categories?.id],
           );
+          sqlHelper.backupDatabase();
         } else {
           var sqlHelper = GetIt.I.get<SqlHelper>();
           await sqlHelper.db!.insert("Categories", {
             "name": nameController?.text,
             "description": descriptionController?.text,
           });
+          sqlHelper.backupDatabase();
         }
         ScaffoldMessenger.of(context).showSnackBar(
           const SnackBar(

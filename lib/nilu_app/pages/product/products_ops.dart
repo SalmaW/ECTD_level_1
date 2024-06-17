@@ -186,6 +186,7 @@ class _ProductsOpsState extends State<ProductsOps> {
               },
               where: 'id =?',
               whereArgs: [widget.products?.id]);
+          sqlHelper.backupDatabase();
         } else {
           var sqlHelper = GetIt.I.get<SqlHelper>();
           await sqlHelper.db!.insert("Products", {
@@ -197,6 +198,7 @@ class _ProductsOpsState extends State<ProductsOps> {
             'isAvailable': isAvailable,
             'categoryId': selectedCategoryId,
           });
+          sqlHelper.backupDatabase();
         }
         ScaffoldMessenger.of(context).showSnackBar(
           const SnackBar(

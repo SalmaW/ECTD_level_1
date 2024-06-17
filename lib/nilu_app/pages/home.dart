@@ -1,5 +1,7 @@
+import 'package:ectd/nilu_app/pages/all_sales.dart';
 import 'package:ectd/nilu_app/pages/client/clients.dart';
 import 'package:ectd/nilu_app/pages/product/products.dart';
+import 'package:ectd/nilu_app/pages/sale_op.dart';
 import '../pages/category/categories.dart';
 import '../helpers/sql_helper.dart';
 import '../widgets/grid_view_item.dart';
@@ -26,6 +28,7 @@ class _HomePageState extends State<HomePage> {
 
   void initializeTables() async {
     var sqlHelper = GetIt.I.get<SqlHelper>();
+    await sqlHelper.restoreDatabase();
     isTableInitialized = await sqlHelper.createTables();
     isLoading = false;
     setState(() {});
@@ -103,7 +106,12 @@ class _HomePageState extends State<HomePage> {
                     color: Colors.orange,
                     iconData: Icons.receipt,
                     label: 'All Sales',
-                    onTap: () {},
+                    onTap: () {
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (ctx) => const AllSales()));
+                    },
                   ),
                   GridViewItem(
                     color: Colors.pink[200],
@@ -131,7 +139,10 @@ class _HomePageState extends State<HomePage> {
                     color: Colors.green,
                     iconData: Icons.shopping_basket,
                     label: 'New Sale',
-                    onTap: () {},
+                    onTap: () {
+                      Navigator.push(context,
+                          MaterialPageRoute(builder: (ctx) => const SaleOp()));
+                    },
                   ),
                   GridViewItem(
                     color: Colors.yellow,

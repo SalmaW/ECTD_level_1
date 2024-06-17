@@ -140,6 +140,7 @@ class _ClientsOpsState extends State<ClientsOps> {
             where: 'id = ?',
             whereArgs: [widget.clients?.id],
           );
+          sqlHelper.backupDatabase();
           // SqlHelper.updateClient(widget.clients!);
         } else {
           var sqlHelper = GetIt.I.get<SqlHelper>();
@@ -149,6 +150,7 @@ class _ClientsOpsState extends State<ClientsOps> {
             "phone": phoneController?.text,
             "address": addressController?.text,
           });
+          sqlHelper.backupDatabase();
           // SqlHelper.addClient(widget.clients!);
         }
         ScaffoldMessenger.of(context).showSnackBar(

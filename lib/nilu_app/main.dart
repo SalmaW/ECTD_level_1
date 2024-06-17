@@ -1,7 +1,6 @@
 import '../nilu_app/helpers/sql_helper.dart';
-import 'package:get_it/get_it.dart';
-
 import '../nilu_app/pages/home.dart';
+import 'package:get_it/get_it.dart';
 import 'package:flutter/material.dart';
 
 void main() async {
