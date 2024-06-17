@@ -1,7 +1,7 @@
-import 'package:ectd/nilu_app/pages/all_sales.dart';
-import 'package:ectd/nilu_app/pages/client/clients.dart';
-import 'package:ectd/nilu_app/pages/product/products.dart';
-import 'package:ectd/nilu_app/pages/sale_op.dart';
+import '../pages/all_sales.dart';
+import '../pages/client/clients.dart';
+import '../pages/product/products.dart';
+import '../pages/sale_op.dart';
 import '../pages/category/categories.dart';
 import '../helpers/sql_helper.dart';
 import '../widgets/grid_view_item.dart';
