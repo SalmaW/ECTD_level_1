@@ -12,7 +12,7 @@ You can see notes in each of these mini-projects.
 
 Here you can see the tasks and short description:
 | Task  | Description |
-| ------------- | ------------- |
+| ----------------- | ------------- |
 | [Task 5](lib/day005)  | Create Dart application that consists of three classes. The parent class is the Car class consists of 3 parameters (color  required, manufacture year optional, motor speed optional)  and has two functions showMotorSpeed, and car info ... create two classes that are inherited from the Car class. demonstrate concepts of (override, this, super, forward constructor)  |
 | [Task 6](lib/day006)  | Content Cell  |
 | [Task 7](lib/day007/task)  | Content Cell  |
