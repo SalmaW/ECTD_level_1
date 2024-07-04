@@ -20,7 +20,7 @@ Here you can see the tasks and a short description:
 | [Task 5](lib/day005)  | Create Dart application that consists of three classes. The parent class is the Car class, which consists of 3 parameters (color  required, manufacture year optional, motor speed optional)  and has two functions showMotorSpeed, and car info ... create two classes which are inherited from the Car class. demonstrate concepts of (override, this, super, forward constructor)  |
 | [Task 6](lib/day006)  | ![screenshot of task6](assets/images/task6.jpg) |
 | [Task 7](lib/day007/task)  | ![screenshot of task7](assets/images/task7.jpg) |
-| [Task 8](lib/day008)  | ![screenshot of task8 p1](assets/images/task8_p1.jpg) ![screenshot of task8 p2](assets/images/task8_p2.jpg) |
+| [Task 8](lib/day008)  | ![screenshot of task8 p1](assets/images/task8_p1.jpg=340X340) ![screenshot of task8 p2](assets/images/task8_p2.jpg) |
 | [Task 9](lib/day009/task)  | ![screenshot of task9](assets/images/task9.jpg) |
 | [Task 10](lib/day010/task)  | Created a simple app to store employee names and show them using `sqlfite` package |
 | [Task 11](lib/day011/task)  | ![screenshot of task11](assets/images/task11.jpg) |
