@@ -11,7 +11,7 @@ This project is a collection of mini-projects throughout the *first 14 sessions*
 You can see notes in each of these mini-projects.
 
 Here you can see the tasks and a short description:
-| Task        | Description |
+| Task ==== | Description |
 | ------------- | ------------- |
 | Task 1 | [Report about JIT Vs AOT](https://drive.google.com/file/d/1OoLIAwxQkiHyTRPPE8QTzO0D9gLUtBXZ/view?usp=drive_link) |
 | [Task 2](lib/day002)  | Example 1 checks the weight. Example 2 uses a switch case to check the value of the variable day. [Report about Const Vs Final](https://drive.google.com/drive/folders/1OtpXo1zeaIVSPcfso-JdgUcmVnO0DF1A?usp=drive_link)  |
@@ -23,9 +23,9 @@ Here you can see the tasks and a short description:
 | [Task 8](lib/day008)  | ![screenshot of task8 p1](assets/images/task8_p1.jpg) ![screenshot of task8 p2](assets/images/task8_p2.jpg) |
 | [Task 9](lib/day009/task)  | ![screenshot of task9](assets/images/task9.jpg) |
 | [Task 10](lib/day010/task)  | Created a simple app to store employee names and show them using `sqlfite` package |
-| [Task 11](lib/day011/task)  | Content Cell  |
-| [Task 12](lib/nilu_app)  | Content Cell  |
-| [Task 13](lib/nilu_app/pages/client)  | Content Cell  |
+| [Task 11](lib/day011/task)  | ![screenshot of task11](assets/images/task11.jpg) |
+| [Task 12](lib/nilu_app)  | setup sqlite for your final product using `getit` package as a service locator (singleton helper) and create tables we defined in the lecture using `batch` operation and make an indicator to show off if database defined successfully or Not  |
+| [Task 13](lib/nilu_app/pages/client)  | Create categories operation page to be able to add categories in sqlite with the ability to show them in another page |
 | [Task 14](lib/nilu_app/pages/product)  | [Report about foreign_keys and how to use in SQLite](https://drive.google.com/file/d/15ihFpR0X1mSrftnfSKOMEN4aLcv_Ed7x/view?usp=sharing)  |
 
 
