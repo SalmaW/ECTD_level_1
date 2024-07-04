@@ -4,25 +4,25 @@ This is training *Flutter Development Course* implemented by the **Egyptian Coun
 
 These programs *Flutter Development Course* are implemented in partnership with the **Ministry of International Cooperation**, the **Egyptian Ministry of Labor**, and the **National Council for Women**, with support from the **Swedish International Development Cooperation Agency (SIDA)** and the **Korea International Cooperation Agency**.
 
-## Getting Started
+## Tasks
 
 This project is a collection of mini-projects throughout the *first 14 sessions* of training, and these mini-projects are represented as a *day folder* in lib.
 
 You can see notes in each of these mini-projects.
 
-Here you can see the tasks and short description:
-| Task | Description |
+Here you can see the tasks and a short description:
+| Task          | Description |
 | ------------- | ------------- |
 | Task 1 | [Report about JIT Vs AOT](https://drive.google.com/file/d/1OoLIAwxQkiHyTRPPE8QTzO0D9gLUtBXZ/view?usp=drive_link) |
 | [Task 2](lib/day002)  | Example 1 is to check the weight. Example 2 is to use switch case to check the value of the variable day [Report about Const Vs Final](https://drive.google.com/drive/folders/1OtpXo1zeaIVSPcfso-JdgUcmVnO0DF1A?usp=drive_link)  |
 | [Task 3](lib/day003)  | Make ATM services application with these options: 1. check balance 2. withdraw cash 3. deposit cash 4. quite |
 | [Task 4](lib/day004)  | Created a dart application that contains a Product class that has properties (name, price, and barcode) and then created a list of 7 products with different prices and then created a function to calculate the total price. and [Report about List, Set, and Map.](https://drive.google.com/file/d/1PJKFTp_WVc6yA8zc_Rdw_7mTVs4Lbrq-/view?usp=drive_link) |
 | [Task 5](lib/day005)  | Create Dart application that consists of three classes. The parent class is the Car class, which consists of 3 parameters (color  required, manufacture year optional, motor speed optional)  and has two functions showMotorSpeed, and car info ... create two classes which are inherited from the Car class. demonstrate concepts of (override, this, super, forward constructor)  |
-| [Task 6](lib/day006)  | ![screenshot of task6](https://drive.google.com/file/d/1Tyw-52vlTcWG8TNawLqtjb9P9C1fzkZZ/view?usp=sharing)  |
-| [Task 7](lib/day007/task)  | Content Cell  |
-| [Task 8](lib/day008)  | Content Cell  |
+| [Task 6](lib/day006)  | ![screenshot of task6](https://drive.google.com/file/d/1Tyw-52vlTcWG8TNawLqtjb9P9C1fzkZZ/view?usp=sharing) |
+| [Task 7](lib/day007/task)  | ![screenshot of task7](https://drive.google.com/file/d/1U0AcFBnuT_69GCbfbAGj97IsPL0nacth/view?usp=sharing) |
+| [Task 8](lib/day008)  | ![screenshot of task8](https://drive.google.com/file/d/1Tyw-52vlTcWG8TNawLqtjb9P9C1fzkZZ/view?usp=sharing) |
 | [Task 9](lib/day009/task)  | Content Cell  |
-| [Task 10](lib/day010/task)  | [Create simple app to store employee names and show them using sqlite] |
+| [Task 10](lib/day010/task)  | Created a simple app to store employee names and show them using 'sqlfite' package |
 | [Task 11](lib/day011/task)  | Content Cell  |
 | [Task 12](lib/nilu_app)  | Content Cell  |
 | [Task 13](lib/nilu_app/pages/client)  | Content Cell  |
