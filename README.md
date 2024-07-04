@@ -14,13 +14,12 @@ Here you can see the tasks and short description:
 | Task | Description |
 | ------------- | ------------- |
 | [Task 1]()  | [Report about JIT Vs AOT](https://drive.google.com/file/d/1OoLIAwxQkiHyTRPPE8QTzO0D9gLUtBXZ/view?usp=drive_link) |
-| [Task 2](lib/day002)  | [Report about Const Vs Final & 2 examples. Example 1 is to check the weight. Example 2 is to use switch case to check the value of the variable day](https://drive.google.com/drive/folders/1OtpXo1zeaIVSPcfso-JdgUcmVnO0DF1A?usp=drive_link)  |
-| [Task 3](lib/day003)  | [Make ATM services application with these options 
-1 check balance 
-2 withdraw cash 
-3 deposite cash 
-4 quite. 
-Make sure to calculate all these operations in initial balance which equals 30000]() |
+| [Task 2](lib/day002)  | Example 1 is to check the weight. Example 2 is to use switch case to check the value of the variable day [Report about Const Vs Final](https://drive.google.com/drive/folders/1OtpXo1zeaIVSPcfso-JdgUcmVnO0DF1A?usp=drive_link)  |
+| [Task 3](lib/day003)  | [Make ATM services application with these options:
+                            1. check balance 
+                            2. withdraw cash 
+                            3. deposit cash 
+                            4. quite ]() |
 | [Task 4](lib/day004)  | [Report about List, Set, and Map. Created a dart application which contains product class which have properties (name,price,barcode) and then created a list of 7 product with different prices and then created a function to calculate total price](https://drive.google.com/file/d/1PJKFTp_WVc6yA8zc_Rdw_7mTVs4Lbrq-/view?usp=drive_link) |
 | [Task 5](lib/day005)  | Create Dart application that consists of three classes. The parent class is the Car class, which consists of 3 parameters (color  required, manufacture year optional, motor speed optional)  and has two functions showMotorSpeed, and car info ... create two classes which are inherited from the Car class. demonstrate concepts of (override, this, super, forward constructor)  |
 | [Task 6](lib/day006)  | ![screenshot of task6](https://drive.google.com/file/d/1Tyw-52vlTcWG8TNawLqtjb9P9C1fzkZZ/view?usp=sharing)  |
