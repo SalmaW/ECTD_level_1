@@ -18,11 +18,11 @@ Here you can see the tasks and a short description:
 | [Task 3](lib/day003)  | Make ATM services application with these options: 1. check balance 2. withdraw cash 3. deposit cash 4. quite |
 | [Task 4](lib/day004)  | Created a dart application that contains a Product class that has properties (name, price, and barcode) and then created a list of 7 products with different prices and then created a function to calculate the total price. and [Report about List, Set, and Map.](https://drive.google.com/file/d/1PJKFTp_WVc6yA8zc_Rdw_7mTVs4Lbrq-/view?usp=drive_link) |
 | [Task 5](lib/day005)  | Create Dart application that consists of three classes. The parent class is the Car class, which consists of 3 parameters (color  required, manufacture year optional, motor speed optional)  and has two functions showMotorSpeed, and car info ... create two classes which are inherited from the Car class. demonstrate concepts of (override, this, super, forward constructor)  |
-| [Task 6](lib/day006)  | ![screenshot of task6](https://drive.google.com/file/d/1Tyw-52vlTcWG8TNawLqtjb9P9C1fzkZZ/view?usp=sharing) |
-| [Task 7](lib/day007/task)  | ![screenshot of task7](https://drive.google.com/file/d/1U0AcFBnuT_69GCbfbAGj97IsPL0nacth/view?usp=sharing) |
-| [Task 8](lib/day008)  | ![screenshot of task8](https://drive.google.com/file/d/1Tyw-52vlTcWG8TNawLqtjb9P9C1fzkZZ/view?usp=sharing) |
+| [Task 6](lib/day006)  | ![screenshot of task6](https://drive.google.com/file/d/1Tyw-52vlTcWG8TNawLqtjb9P9C1fzkZZ/view) |
+| [Task 7](lib/day007/task)  | ![screenshot of task7](https://drive.google.com/file/d/1U0AcFBnuT_69GCbfbAGj97IsPL0nacth/view) |
+| [Task 8](lib/day008)  | ![screenshot of task8]() |
 | [Task 9](lib/day009/task)  | Content Cell  |
-| [Task 10](lib/day010/task)  | Created a simple app to store employee names and show them using 'sqlfite' package |
+| [Task 10](lib/day010/task)  | Created a simple app to store employee names and show them using `sqlfite` package |
 | [Task 11](lib/day011/task)  | Content Cell  |
 | [Task 12](lib/nilu_app)  | Content Cell  |
 | [Task 13](lib/nilu_app/pages/client)  | Content Cell  |
