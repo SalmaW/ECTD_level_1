@@ -23,7 +23,6 @@ Here you can see the tasks and short description:
 | [Task 12](lib/nilu_app)  | Content Cell  |
 | [Task 13](lib/nilu_app/pages/client)  | Content Cell  |
 | [Task 14](lib/nilu_app/pages/product)  | [Report about foreign_keys and how to use in SQLite](https://drive.google.com/file/d/15ihFpR0X1mSrftnfSKOMEN4aLcv_Ed7x/view?usp=sharing)  |
-| [Task 15](lib/nilu_app/pages/sale_op.dart)  | Content Cell  |
 
 
 A few resources to get you started if this is your first Flutter project:
