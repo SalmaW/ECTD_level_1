@@ -11,9 +11,9 @@ This project is a collection of mini-projects throughout the *first 14 sessions*
 You can see notes in each of these mini-projects.
 
 Here you can see the tasks and a short description:
-| Task | Description |
+| Task ======| Description |
 | ------------- | ------------- |
-| Task 1            | [Report about JIT Vs AOT](https://drive.google.com/file/d/1OoLIAwxQkiHyTRPPE8QTzO0D9gLUtBXZ/view?usp=drive_link) |
+| Task 1 | [Report about JIT Vs AOT](https://drive.google.com/file/d/1OoLIAwxQkiHyTRPPE8QTzO0D9gLUtBXZ/view?usp=drive_link) |
 | [Task 2](lib/day002)  | Example 1 checks the weight. Example 2 uses a switch case to check the value of the variable day. [Report about Const Vs Final](https://drive.google.com/drive/folders/1OtpXo1zeaIVSPcfso-JdgUcmVnO0DF1A?usp=drive_link)  |
 | [Task 3](lib/day003)  | Make ATM services application with these options: 1. check balance 2. withdraw cash 3. deposit cash 4. quite |
 | [Task 4](lib/day004)  | Created a dart application that contains a Product class that has properties (name, price, and barcode) and then created a list of 7 products with different prices and then created a function to calculate the total price. and [Report about List, Set, and Map.](https://drive.google.com/file/d/1PJKFTp_WVc6yA8zc_Rdw_7mTVs4Lbrq-/view?usp=drive_link) |
